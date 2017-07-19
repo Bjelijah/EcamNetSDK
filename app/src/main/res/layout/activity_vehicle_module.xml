@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.howell.ecamnetsdk.VehicleModuleActivity">
+
+    <Button
+        android:id="@+id/btn_vehicle_start_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绑定推送服务"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btn_vehicle_stop_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解绑推送服务"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_record"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_vehicle_query_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询事件历史记录"
+        android:layout_marginTop="17dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle_start_service"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_vehicle_query_vehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询车辆信息"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle_query_event"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_vehicle_photo_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拍照查询车辆"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle_query_vehicle"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_vehicle_gis_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示GIS车辆信息"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle_photo_query"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_vehicle_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地图GPS"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn_vehicle_rmc"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_vehicle_rmc"
+        android:layout_marginBottom="0dp" />
+
+    <Button
+        android:id="@+id/btn_vehicle_rmc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地图轨迹"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="22dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle_stop_service" />
+
+    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="序列号查询识别器记录"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle_gis_query"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
