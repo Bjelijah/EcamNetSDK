@@ -417,6 +417,7 @@ public class TurnJsonUtil {
 	
 	public static String getTurnPtzJsonStr(TurnPtzCtrlBean bean){
 		JSONObject object = null;
+
 		object = new JSONObject();
 		try {
 			object.put("session_id", bean.getSessionId());
