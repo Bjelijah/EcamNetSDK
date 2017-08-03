@@ -37,4 +37,5 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile project(path: ':ecamsdk')
     compile files('libs/BaiduLBS_Android.jar')
+    compile 'org.jetbrains:annotations-java5:15.0'
 }

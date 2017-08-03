@@ -264,6 +264,9 @@ public class YV12Renderer implements Renderer {
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 		// TODO Auto-generated method stub
 		// Define a simple shader program for our point.
+//		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+		GLES20.glClearColor(0f,0f,0f,1.0f);
+		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT );
 
 		int program = GLES20.glCreateProgram();
 		addShaderTo(GLES20.GL_VERTEX_SHADER, VERTEX_SHADER_STRING, program);
@@ -298,6 +301,9 @@ public class YV12Renderer implements Renderer {
 		//		jni.nativeOnSurfaceCreated();
 		JniUtil.YUVSetEnable();
 	}
+
+
+
 
 	public static String readTextFileFromRawResource(final Context context, final int resourceId) {
 		final InputStream inputStream = context.getResources().openRawResource(resourceId);
