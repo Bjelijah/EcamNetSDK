@@ -362,6 +362,6 @@ public class JniUtil {
      * @param len data length
      */
 	public static native void turnInputViewData(byte [] data,int len);
-	
-	
+
+    public static native void transPTZControl(String jsonStr,int jsonLen);
 }

@@ -1,7 +1,6 @@
 package com.howell.bean.turnbean;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TurnGetCamAckBean {
 	int code;

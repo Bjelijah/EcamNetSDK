@@ -3,7 +3,6 @@ package com.howell.protocol.http;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 
 import com.howell.bean.enumerations.ProtocolEnum;
@@ -1924,7 +1923,7 @@ public class HttpManager {
      * @throws JSONException
      */
     public EventRecordedList queryBusinessEventRecords(String begTime, String endTime) throws UnsupportedEncodingException, NoSuchAlgorithmException, JSONException {
-        String cookie = getCookie("GET:/howell/ver10/data_service/Business/Informations/Event/Records?BeginTime="+begTime+"&EndTime="+endTime+":");
+        String cookie = getCookie("GET:/howell/ver10/data_service/Business/Informations/Event/Records?BeginTime="+begTime+"&EndTime="+endTime+":");// FIXME: 2017/8/11 is it ok? by cbj
         return JsonUtil.parseEventRecordListJsonObject(new JSONObject(
                 handleHttpProtocol(GET,mHttp+"://"+mServerIP+":"+mPort+"/howell/ver10/data_service/Business/Informations/Event/Records?BeginTime="+begTime+"&EndTime="+endTime,null,cookie)
         ));

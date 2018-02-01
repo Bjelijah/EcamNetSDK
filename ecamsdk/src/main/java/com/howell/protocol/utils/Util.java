@@ -1,7 +1,5 @@
 package com.howell.protocol.utils;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 
 /**

@@ -3,11 +3,8 @@ package com.howell.service;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.nfc.Tag;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.util.Log;
 

@@ -10,7 +10,11 @@
         <android.opengl.GLSurfaceView
             android:id="@+id/glsurface_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+           />
+
+
+
 
         <Button
             android:id="@+id/btn_pause_play"
@@ -39,6 +43,95 @@
 
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/play_rl_ptz"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/play_ptz_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true" />
+
+        <LinearLayout
+            android:id="@+id/play_ptz_top"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_above="@id/play_ptz_center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/play_ptz_move_selector"
+            android:clickable="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:padding="8dp"
+                android:src="@mipmap/play_up" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/play_ptz_bottom"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/play_ptz_center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/play_ptz_move_selector"
+            android:clickable="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:padding="8dp"
+                android:src="@mipmap/play_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/play_ptz_left"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/play_ptz_bottom"
+            android:background="@drawable/play_ptz_move_selector"
+            android:clickable="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:padding="8dp"
+                android:src="@mipmap/play_left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/play_ptz_right"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/play_ptz_bottom"
+            android:layout_toRightOf="@id/play_ptz_bottom"
+            android:background="@drawable/play_ptz_move_selector"
+            android:clickable="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:padding="8dp"
+                android:src="@mipmap/play_right" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
 
 
 

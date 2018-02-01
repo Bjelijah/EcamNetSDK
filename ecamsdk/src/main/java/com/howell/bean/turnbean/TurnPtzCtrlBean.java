@@ -1,12 +1,12 @@
 package com.howell.bean.turnbean;
 
 public class TurnPtzCtrlBean {
-	String sessionId;
-	String deviceId;
-	int channel;
-	int ptzCmd;
-	int speed;
-	int presetNo;
+	String sessionId;//会话id
+	String deviceId;//设备id
+	int channel;//通道号
+	int ptzCmd;//命令
+	int speed;//速度0-255   0停止
+	int presetNo;//预置位置0-255
 	public String getSessionId() {
 		return sessionId;
 	}
@@ -52,6 +52,16 @@ public class TurnPtzCtrlBean {
 		this.speed = speed;
 		this.presetNo = presetNo;
 	}
+
+	public TurnPtzCtrlBean(String sessionId, String deviceId, int channel, int ptzCmd, int speed) {
+		this.sessionId = sessionId;
+		this.deviceId = deviceId;
+		this.channel = channel;
+		this.ptzCmd = ptzCmd;
+		this.speed = speed;
+		this.presetNo = -1;
+	}
+
 	@Override
 	public String toString() {
 		return "TurnPtzCtrlBean [sessionId=" + sessionId + ", deviceId=" + deviceId + ", channel=" + channel

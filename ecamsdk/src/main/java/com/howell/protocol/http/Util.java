@@ -1,7 +1,5 @@
 package com.howell.protocol.http;
 
-import android.util.Log;
-
 /**
  * Created by Administrator on 2017/5/15.
  */

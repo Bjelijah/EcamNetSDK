@@ -5,7 +5,7 @@
 
 
 
-    <com.howell.camera.CameraTextureView
+    <com.demo.camera.CameraTextureView
         android:id="@+id/player_textureView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

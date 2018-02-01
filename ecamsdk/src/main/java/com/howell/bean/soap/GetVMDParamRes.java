@@ -1,7 +1,5 @@
 package com.howell.bean.soap;
 
-import android.text.StaticLayout;
-
 /**
  * Created by Administrator on 2017/6/15.
  */

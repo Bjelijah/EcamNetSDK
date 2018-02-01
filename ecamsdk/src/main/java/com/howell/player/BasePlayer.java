@@ -1,12 +1,8 @@
 package com.howell.player;
 
-import android.content.Context;
-
 import com.howell.bean.turnbean.TurnSubScribeAckBean;
 import com.howell.jni.JniUtil;
-import com.howell.protocol.turn.TurnJsonUtil;
 import com.howell.protocol.turn.TurnManager;
-import com.howell.protocol.utils.SSLSocketUtil;
 
 import java.util.ArrayList;
 

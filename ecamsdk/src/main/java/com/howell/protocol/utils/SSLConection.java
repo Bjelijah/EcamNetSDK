@@ -1,7 +1,6 @@
 package com.howell.protocol.utils;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.apache.http.HttpVersion;
 import org.apache.http.client.HttpClient;

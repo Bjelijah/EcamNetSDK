@@ -1,7 +1,5 @@
 package com.howell.protocol.websocket;
 
-import android.util.Log;
-
 import com.howell.bean.httpbean.WSRes;
 import com.howell.protocol.utils.SDKDebugLog;
 

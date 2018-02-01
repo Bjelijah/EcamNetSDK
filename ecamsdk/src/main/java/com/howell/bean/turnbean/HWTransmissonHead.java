@@ -1,7 +1,5 @@
 package com.howell.bean.turnbean;
 
-import android.util.Log;
-
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;

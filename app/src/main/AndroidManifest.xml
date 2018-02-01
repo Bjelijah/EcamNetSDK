@@ -38,7 +38,7 @@
 
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.demo.ecamnetsdk.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,16 +46,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".VideoModuleActivity"/>
-        <activity android:name=".VehicleModuleActivity"/>
-        <activity android:name=".TakePhotoActivity"
+        <activity android:name="com.demo.ecamnetsdk.VideoModuleActivity"/>
+        <activity android:name="com.demo.ecamnetsdk.VehicleModuleActivity"/>
+        <activity android:name="com.demo.ecamnetsdk.TakePhotoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-        <activity android:name="com.howell.baidumap.GPSMapActivity"/>
-        <activity android:name="com.howell.baidumap.RMCMapActivity"/>
+        <activity android:name="com.demo.baidumap.GPSMapActivity"/>
+        <activity android:name="com.demo.baidumap.RMCMapActivity"/>
 
-        <activity android:name=".PlayerActivity"
+        <activity android:name="com.demo.ecamnetsdk.PlayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
@@ -66,7 +66,7 @@
         <!-- 注册自定义广播接收器  并添加相关action-->
         <!-- com.howell.sdk.alarmEvent  报警事件-->
         <!-- com.howell.sdk.alarmNotice 报警消息-->
-        <receiver android:name="com.howell.receive.MyReceive">
+        <receiver android:name="com.demo.receive.MyReceive">
             <intent-filter>
                 <action android:name="com.howell.sdk.alarmEvent"/>
                 <action android:name="com.howell.sdk.alarmNotice"/>

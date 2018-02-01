@@ -1,14 +1,13 @@
 package com.howell.protocol.turn;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.howell.bean.turnbean.Subscribe;
 import com.howell.bean.turnbean.TurnGetRecordedFileAckBean;
 import com.howell.bean.turnbean.TurnGetRecordedFilesBean;
+import com.howell.bean.turnbean.TurnPtzCtrlBean;
 import com.howell.bean.turnbean.TurnSubScribe;
 import com.howell.jni.JniUtil;
-import com.howell.player.AudioAction;
 import com.howell.protocol.utils.FileUtil;
 import com.howell.protocol.utils.SDKDebugLog;
 
@@ -154,7 +153,7 @@ public class TurnManager {
     private void onDisconnectUnexpect(int flag){//0 socket 1 sync  2 packet receive false   3  http !=200
         SDKDebugLog.logE(TAG+":onDisconnectUnexpect","disconnectUnexpect");
         sendOnDisconnectUnexpectResult(flag);}
-    private void onRecordFileList(String jsonStr){sendOnRecordFileListResult(TurnJsonUtil.getTurnRecordAckFromJsonStr(jsonStr));}
+    private void onRecordFileList(String jsonStr){SDKDebugLog.logI(TAG+":onRecordFileList",jsonStr);sendOnRecordFileListResult(TurnJsonUtil.getTurnRecordAckFromJsonStr(jsonStr));}
     private void onSubscribe(String jsonStr){sendOnSubscribeResult(jsonStr);}
     private void onUnsubscribe(String jsonStr){sendOnUnsubscribeResult(jsonStr);}
 
@@ -165,15 +164,17 @@ public class TurnManager {
      * @return TurnManager
      */
     public TurnManager turnInit(Context context){
-        JniUtil.transInit();
-        JniUtil.transSetCallBackObj(this,0);
-        JniUtil.transSetCallbackMethodName("onConnect",0);
-        JniUtil.transSetCallbackMethodName("onDisconnect",1);
-        JniUtil.transSetCallbackMethodName("onRecordFileList",2);
-        JniUtil.transSetCallbackMethodName("onDisconnectUnexpect",3);
-        JniUtil.transSetCallbackMethodName("onSubscribe",4);
-        JniUtil.transSetCallbackMethodName("onUnsubscribe",6);//fixme 5 is no use
-        setCrtPath(context);
+        synchronized (this) {
+            JniUtil.transInit();
+            JniUtil.transSetCallBackObj(this, 0);
+            JniUtil.transSetCallbackMethodName("onConnect", 0);
+            JniUtil.transSetCallbackMethodName("onDisconnect", 1);
+            JniUtil.transSetCallbackMethodName("onRecordFileList", 2);
+            JniUtil.transSetCallbackMethodName("onDisconnectUnexpect", 3);
+            JniUtil.transSetCallbackMethodName("onSubscribe", 4);
+            JniUtil.transSetCallbackMethodName("onUnsubscribe", 6);//fixme 5 is no use
+            setCrtPath(context);
+        }
         return this;
     }
 
@@ -182,8 +183,10 @@ public class TurnManager {
      * release buffer in jni
      */
     public void turnDeinit(){
-        JniUtil.transSetCallBackObj(null,0);
-        JniUtil.transDeinit();
+        synchronized (this) {
+            JniUtil.transSetCallBackObj(null, 0);
+            JniUtil.transDeinit();
+        }
     }
 
     /**
@@ -238,6 +241,18 @@ public class TurnManager {
     public void unSubscribe(){
         JniUtil.transUnsubscribe();
     }
+
+    /**
+     * ptz
+     */
+    public void ptzControl(TurnPtzCtrlBean bean){
+        String jsonStr = TurnJsonUtil.getTurnPtzJsonStr(bean);
+        SDKDebugLog.logI(TAG+":ptzControl","jsonStr="+jsonStr);
+        JniUtil.transPTZControl(jsonStr,jsonStr.length());
+    }
+
+
+
 
     /**
      * catch picture in encoder

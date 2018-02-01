@@ -1,7 +1,5 @@
 package com.howell.bean.httpbean;
 
-import com.howell.bean.enumerations.ProtocolEnum;
-
 /**
  * Created by Administrator on 2017/4/18.
  */
